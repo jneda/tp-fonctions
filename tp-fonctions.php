@@ -96,7 +96,7 @@
     // affichage de la ou des personnes qui ont éventuellement obtenu exactement
     // la moyenne
 
-    function trouveEtudiants($etudiants, $notes, $valeur)
+    function trouverEtudiants($etudiants, $notes, $valeur)
     {
         // retourne la liste des étudiants ayant obtenu une note égale à
         //  la valeur recherchée
@@ -114,7 +114,7 @@
         return $resultats;
     }
     
-    $etudiants_moyenne = trouveEtudiants($etudiants, $notes, $moyenne);
+    $etudiants_moyenne = trouverEtudiants($etudiants, $notes, $moyenne);
     
     // affichage du résultat
 
@@ -162,7 +162,7 @@
     $note_min = trouverMin($notes);
 
     // on va chercher les noms correspondants
-    $etudiants_min = trouveEtudiants($etudiants, $notes, $note_min);
+    $etudiants_min = trouverEtudiants($etudiants, $notes, $note_min);
 
     // on affiche les résultats
     echo "<p>La note minimale est <strong>$note_min</strong>.</p>";
@@ -185,7 +185,7 @@
     $note_max = trouverMax($notes);
     
     // on va chercher les noms correspondants
-    $etudiants_max = trouveEtudiants($etudiants, $notes, $note_max);
+    $etudiants_max = trouverEtudiants($etudiants, $notes, $note_max);
 
     // on affiche les résultats
     echo "<p>La note maximale est <strong>$note_max</strong>.</p>";
