@@ -96,19 +96,21 @@
     // affichage de la ou des personnes qui ont éventuellement obtenu exactement
     // la moyenne
 
-    function trouverEtudiants($etudiants, $notes, $valeur)
+    function trouverEtudiants($etudiants, $notes, $noteRecherchee)
     {
         // retourne la liste des étudiants ayant obtenu une note égale à
         //  la valeur recherchée
 
-        // on trouve les index dans le tableau des notes
-        $cles = array_keys($notes, $valeur);
-
-        // on trouve les noms correspondants dans le tableau des noms
-        // grâce aux index
         $resultats = [];
-        foreach ($cles as $cle) {
-            array_push($resultats, $etudiants[$cle]);
+
+        // on parcourt le tableau des notes pour trouver les bons index
+
+        for ($i = 0; $i < count($notes); $i++) {
+            if ($notes[$i] === $noteRecherchee) {
+                // si on trouve la note recherchée, on ajoute le nom de
+                // l'étudiant au tableau $resultats
+                array_push($resultats, $etudiants[$i]);
+            }
         }
 
         return $resultats;
